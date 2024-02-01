@@ -4,6 +4,7 @@ import { displayCurDir } from './utils/curDir.js';
 import { chdir } from 'node:process';
 import { homedir } from 'node:os';
 import { goodbyeMessage } from './utils/goodByeMsg.js';
+import { commands } from './utils/commands.js';
 
 const usernameArg = process.argv.find(arg => arg.startsWith('--username='));
 const username = usernameArg ? usernameArg.split('=')[1] : 'Guest';
@@ -18,15 +19,18 @@ process.on('SIGINT', () => {
   process.exit();
 });
 
-rl.prompt();
-
-rl.on('line', (input) => {
+rl.on('line', async (input) => {
   if (input === '.exit') {
     goodbyeMessage(username);
     process.exit(0);
-  } else {
+  }
+
+  try {
+    await commands(input);
+  } catch (error) {
+    console.error('Error:', error.message);
+  } finally {
     displayCurDir();
-    rl.prompt();
   }
 }).on('close', () => {
   goodbyeMessage(username);
