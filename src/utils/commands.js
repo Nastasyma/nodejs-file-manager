@@ -1,4 +1,5 @@
-import { ls } from "../commands/ls.js";
+import { ls } from "../nwd/ls.js";
+import { up } from "../nwd/up.js";
 
 export const commands = async (input) => {
   const command = input
@@ -9,6 +10,9 @@ export const commands = async (input) => {
       switch (command[0]) {
         case "ls":
           await ls();
+          break;
+        case "up":
+          await up();
           break;
         default:
           console.log("Invalid input");

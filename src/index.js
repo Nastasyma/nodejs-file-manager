@@ -28,7 +28,7 @@ rl.on('line', async (input) => {
   try {
     await commands(input);
   } catch (error) {
-    console.error('Error:', error.message);
+    console.error('Operation failed:', error.message);
   } finally {
     displayCurDir();
   }
