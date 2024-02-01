@@ -1,4 +1,4 @@
-import { ls, up, cd } from "../commands/index.js";
+import { ls, up, cd, cat } from "../commands/index.js";
 
 export const commands = async (input) => {
   const command = input
@@ -17,6 +17,9 @@ export const commands = async (input) => {
           break;
         case "ls":
           await ls();
+          break;
+        case "cat":
+          await cat(path);
           break;
         default:
           console.log("Invalid input");
