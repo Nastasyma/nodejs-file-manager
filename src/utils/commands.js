@@ -1,5 +1,4 @@
-import { ls } from "../nwd/ls.js";
-import { up } from "../nwd/up.js";
+import { ls, up, cd } from "../commands/index.js";
 
 export const commands = async (input) => {
   const command = input
@@ -7,12 +6,17 @@ export const commands = async (input) => {
     .map((match) => match.replace(/^['"`]|['"`]$/g, ""));
 
     try {
+      const path = command.slice(1).join(" ");
+
       switch (command[0]) {
-        case "ls":
-          await ls();
-          break;
         case "up":
           await up();
+          break;
+        case "cd":
+          await cd(path);
+          break;
+        case "ls":
+          await ls();
           break;
         default:
           console.log("Invalid input");
