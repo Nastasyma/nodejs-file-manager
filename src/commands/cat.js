@@ -11,7 +11,7 @@ export const cat = async (path) => {
   });
 
   rs.on('error', (error) => {
-    console.error('Error reading file:', error);
+    console.error('Operation failed:', error.message);
   });
 
   rs.on('end', () => {

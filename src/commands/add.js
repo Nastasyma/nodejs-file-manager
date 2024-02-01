@@ -7,7 +7,7 @@ export const add = async (fileName) => {
 
   fs.writeFile(filePath, '', { flag: 'wx' }, (error) => {
     if (error) {
-      console.log('Error creating file:', error.message);
+      console.log('Operation failed:', error.message);
     } else {
       console.log(`File ${fileName} created successfully`);
     }

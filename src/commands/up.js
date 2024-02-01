@@ -6,7 +6,7 @@ export const up = async () => {
   const currentDir = cwd();
 
   if (currentDir === sep || (currentDir.length === 3 && currentDir.endsWith(':\\'))) {
-    console.log("You are already in the root directory");
+    console.log("Operation failed: You are already in the root directory");
     return;
   }
 
