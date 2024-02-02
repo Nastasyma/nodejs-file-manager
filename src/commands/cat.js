@@ -1,6 +1,7 @@
 import fs from 'fs';
-import { cwd } from 'process';
 import { resolve } from 'node:path';
+import { cwd } from 'process';
+import { displayErrorMessage } from '../utils/messages.js';
 
 export const cat = async (path) => {
   const filePath = resolve(cwd(), path);
@@ -11,7 +12,7 @@ export const cat = async (path) => {
   });
 
   rs.on('error', (error) => {
-    console.error('Operation failed:', error.message);
+    displayErrorMessage(error.message);
   });
 
   rs.on('end', () => {

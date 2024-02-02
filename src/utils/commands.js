@@ -1,4 +1,4 @@
-import { ls, up, cd, cat, add, rn } from "../commands/index.js";
+import { add, cat, cd, ls, rn, up } from "../commands/index.js";
 
 export const commands = async (input) => {
   const command = input

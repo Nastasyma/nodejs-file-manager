@@ -1,6 +1,7 @@
+import { resolve } from 'node:path';
 import { chdir } from 'node:process';
 import { cwd } from 'process';
-import { resolve } from 'node:path';
+import { displayErrorMessage } from '../utils/messages.js';
 
 export const cd = async (path) => {
   const currentDir = cwd();
@@ -9,6 +10,6 @@ export const cd = async (path) => {
   try {
     chdir(targetDir);
   } catch (error) {
-    console.error('Operation failed:', error.message);
+    displayErrorMessage(error.message);
   }
 };

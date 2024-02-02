@@ -1,6 +1,6 @@
 import { readdir, stat } from "fs/promises";
-import { cwd } from "process";
 import { join } from "path";
+import { cwd } from "process";
 
 export const ls = async () => {
   const filesAndFolders = await readdir(cwd(), { withFileTypes: true });
