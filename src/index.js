@@ -3,8 +3,7 @@ import { chdir } from 'node:process';
 import { createInterface } from 'node:readline';
 import { stdin as input, stdout as output } from 'process';
 import { commands } from './utils/commands.js';
-import { displayCurDir } from './utils/curDir.js';
-import { displayErrorMessage, displayGoodbyeMessage } from './utils/messages.js';
+import { displayCurDir, displayErrorMessage, displayGoodbyeMessage } from './utils/messages.js';
 
 const usernameArg = process.argv.find(arg => arg.startsWith('--username='));
 const username = usernameArg ? usernameArg.split('=')[1] : 'Guest';
