@@ -1,4 +1,4 @@
-import { add, cat, cd, ls, rn, up, cp } from "../commands/index.js";
+import { add, cat, cd, cp, ls, mv, rn, up } from "../commands/index.js";
 
 export const commands = async (input) => {
   const command = input
@@ -30,6 +30,9 @@ export const commands = async (input) => {
           break;
         case "cp":
           await cp(srcFile, destFile);
+          break;
+        case "mv":
+          await mv(srcFile, destFile);
           break;
         default:
           console.log("Invalid input");
