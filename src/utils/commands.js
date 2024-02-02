@@ -1,4 +1,4 @@
-import { ls, up, cd, cat, add } from "../commands/index.js";
+import { ls, up, cd, cat, add, rn } from "../commands/index.js";
 
 export const commands = async (input) => {
   const command = input
@@ -7,6 +7,7 @@ export const commands = async (input) => {
 
     try {
       const path = command.slice(1).join(" ");
+      const [srcFile, destFile] = path.split(' ');
 
       switch (command[0]) {
         case "up":
@@ -23,6 +24,9 @@ export const commands = async (input) => {
           break;
         case "add":
           await add(path);
+          break;
+        case "rn":
+          await rn(srcFile, destFile);
           break;
         default:
           console.log("Invalid input");
