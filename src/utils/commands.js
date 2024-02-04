@@ -1,4 +1,4 @@
-import { add, cat, cd, compress, cp, hash, ls, mv, rm, rn, up } from "../commands/index.js";
+import { add, cat, cd, compress, cp, decompress, hash, ls, mv, rm, rn, up } from "../commands/index.js";
 
 export const commands = async (input) => {
   const command = input
@@ -42,6 +42,9 @@ export const commands = async (input) => {
           break;
         case "compress":
           await compress(srcFile, destFile);
+          break;
+        case "decompress":
+          await decompress(srcFile, destFile);
           break;
         default:
           console.log("Invalid input");

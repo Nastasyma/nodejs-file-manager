@@ -3,6 +3,7 @@ export { cat } from "./cat.js";
 export { cd } from "./cd.js";
 export { compress } from "./compress.js";
 export { cp } from "./cp.js";
+export { decompress } from "./decompress.js";
 export { hash } from "./hash.js";
 export { ls } from "./ls.js";
 export { mv } from "./mv.js";
