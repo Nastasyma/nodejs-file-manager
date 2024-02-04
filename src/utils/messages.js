@@ -1,12 +1,14 @@
+import { log } from "./coloredMsg.js";
+
 export const displayCurDir = () => {
-  console.log(`You are currently in ${process.cwd()}`);
+  log.yellow(`You are currently in ${process.cwd()}`);
 };
 
 export const displayGoodbyeMessage = (username) => {
-  console.log(`Thank you for using File Manager, ${username}, goodbye!`);
+  log.cyan(`Thank you for using File Manager, ${username}, goodbye!`);
 };
 
 export const displayErrorMessage = (message) => {
-  console.log(`Operation failed: ${message}`);
+  log.red(`Operation failed: ${message}`);
 }
 

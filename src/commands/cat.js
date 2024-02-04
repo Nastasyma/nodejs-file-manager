@@ -2,6 +2,7 @@ import fs from 'fs';
 import { resolve } from 'node:path';
 import { cwd } from 'process';
 import { displayErrorMessage } from '../utils/messages.js';
+import { log } from '../utils/coloredMsg.js';
 
 export const cat = async (path) => {
   const filePath = resolve(cwd(), path);
@@ -16,6 +17,6 @@ export const cat = async (path) => {
   });
 
   rs.on('end', () => {
-    console.log('File read complete');
+    log.green('File read complete');
   });
 };
