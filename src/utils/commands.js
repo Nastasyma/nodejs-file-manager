@@ -1,4 +1,6 @@
 import { add, cat, cd, compress, cp, decompress, hash, ls, mv, rm, rn, up, printOsInfo } from "../commands/index.js";
+import { log } from "./coloredMsg.js";
+import { displayErrorMessage } from "./messages.js";
 
 export const commands = async (input) => {
   const command = input
@@ -50,10 +52,10 @@ export const commands = async (input) => {
           await printOsInfo(path);
           break;
         default:
-          console.log("Invalid input: command not found");
+          log.red("Invalid input: command not found");
           break;
       }
     } catch (error) {
-      console.log("Operation failed:", error.message);
+      displayErrorMessage(error.message);
     }
 };
