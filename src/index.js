@@ -11,6 +11,7 @@ const username = usernameArg ? usernameArg.split('=')[1] : 'Guest';
 Message.magenta(`Welcome to the File Manager, ${username}!`);
 
 chdir(homedir());
+displayCurDir();
 
 const rl = createInterface({ input, output });
 
