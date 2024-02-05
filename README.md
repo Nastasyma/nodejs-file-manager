@@ -13,8 +13,8 @@ npm  run  start  --  --username=your_username
  **cat *path_to_file*** - read file and print it's content in console (e.g. cat text.txt);  
  **add *new_file_name*** - create empty file in current working directory (e.g. add text2.txt);  
  **rn *path_to_file new_filename*** - rename file (e.g. rn text2.txt text3.txt);  
- **cp *path_to_file path_to_new_directory*** - copy file (e.g. cp text2.txt my_folder\text2.txt);  
- **mv *path_to_file path_to_new_directory*** - move file (e.g. mv text2.txt my_folder\text2.txt);  
+ **cp *path_to_file path_to_new_directory*** - copy file (e.g. cp text2.txt my_folder);  
+ **mv *path_to_file path_to_new_directory*** - move file (e.g. mv text2.txt my_folder);  
  **rm *path_to_file*** - delete file (e.g. rm text2.txt);  
  **hash *path_to_file*** - calculate hash for file and print it into console (e.g. hash text2.txt);  
  **compress *path_to_file path_to_destination*** - compress file (using Brotli algorithm) (e.g. compress text2.txt text22.txt);  
