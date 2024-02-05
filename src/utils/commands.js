@@ -1,4 +1,4 @@
-import { add, cat, cd, compress, cp, decompress, hash, ls, mv, rm, rn, up } from "../commands/index.js";
+import { add, cat, cd, compress, cp, decompress, hash, ls, mv, rm, rn, up, printOsInfo } from "../commands/index.js";
 
 export const commands = async (input) => {
   const command = input
@@ -46,8 +46,11 @@ export const commands = async (input) => {
         case "decompress":
           await decompress(srcFile, destFile);
           break;
+        case "os":
+          await printOsInfo(path);
+          break;
         default:
-          console.log("Invalid input");
+          console.log("Invalid input: command not found");
           break;
       }
     } catch (error) {

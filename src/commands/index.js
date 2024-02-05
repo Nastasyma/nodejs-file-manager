@@ -7,6 +7,7 @@ export { decompress } from "./decompress.js";
 export { hash } from "./hash.js";
 export { ls } from "./ls.js";
 export { mv } from "./mv.js";
+export { printOsInfo } from "./os.js";
 export { rm } from "./rm.js";
 export { rn } from "./rn.js";
 export { up } from "./up.js";
