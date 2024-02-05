@@ -6,11 +6,11 @@ import { Message } from "../../utils/coloredMsg.js";
 
 export const cp = async (srcPath, destPath) => {
   const sourceFilePath = resolve(cwd(), srcPath);
-  const destinationFilePath = resolve(cwd(), destPath);
+  const destinationFilePath = resolve(cwd(), destPath, srcPath.split('/').pop());
 
   fs.access(destinationFilePath, (err) => {
     if (!err) {
-      displayErrorMessage(`File ${destPath} already exists`);
+      displayErrorMessage(`File ${destinationFilePath} already exists`);
       return;
     }
 
