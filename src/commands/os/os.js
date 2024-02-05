@@ -1,24 +1,24 @@
 import os from "os";
-import { log } from "../../utils/coloredMsg.js";
+import { Message } from "../../utils/coloredMsg.js";
 
 export const printOsInfo = async (arg) => {
   switch (arg) {
     case "--EOL":
-      log.green(`System End-Of-Line: ${JSON.stringify(os.EOL)}`);
+      Message.green(`System End-Of-Line: ${JSON.stringify(os.EOL)}`);
       break;
     case "--homedir":
-      log.green(`Home directory: ${os.homedir()}`);
+      Message.green(`Home directory: ${os.homedir()}`);
       break;
     case "--username":
-      log.green(`System user name: ${os.userInfo().username}`);
+      Message.green(`System user name: ${os.userInfo().username}`);
       break;
     case "--architecture":
-      log.green(`CPU architecture: ${os.arch()}`);
+      Message.green(`CPU architecture: ${os.arch()}`);
       break;
     case "--cpus":
-      log.green(`Overall amount of CPUs: ${os.cpus().length}`);
+      Message.green(`Overall amount of CPUs: ${os.cpus().length}`);
       os.cpus().forEach((cpu, index) => {
-        log.green(
+        Message.green(
           `CPU ${index + 1} - Model: ${cpu.model.trim()}, Speed: ${
             cpu.speed
           } MHz (${(cpu.speed / 1000).toFixed(2)} GHz)`
@@ -26,7 +26,7 @@ export const printOsInfo = async (arg) => {
       });
       break;
     default:
-      log.red(
+      Message.red(
         "Invalid input: arg must be --EOL, --homedir, --username, --architecture or --cpus"
       );
   }

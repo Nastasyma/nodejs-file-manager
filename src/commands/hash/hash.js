@@ -2,7 +2,7 @@ import crypto from "crypto";
 import fs from "fs";
 import { resolve } from "node:path";
 import { displayErrorMessage } from "../../utils/messages.js";
-import { log } from "../../utils/coloredMsg.js";
+import { Message } from "../../utils/coloredMsg.js";
 
 export const hash = async (filePath) => {
   const fileToHash = resolve(filePath);
@@ -19,6 +19,6 @@ export const hash = async (filePath) => {
   });
 
   readStream.on("end", () => {
-    log.blue(`Hash of ${filePath}: ${hash.digest("hex")}`);
+    Message.blue(`Hash of ${filePath}: ${hash.digest("hex")}`);
   });
 };

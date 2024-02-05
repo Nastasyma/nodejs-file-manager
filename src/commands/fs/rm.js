@@ -2,7 +2,7 @@ import fs from "fs";
 import { resolve } from "node:path";
 import { cwd } from "process";
 import { displayErrorMessage } from "../../utils/messages.js";
-import { log } from "../../utils/coloredMsg.js";
+import { Message } from "../../utils/coloredMsg.js";
 
 export const rm = async (filePath) => {
   const fileToDelete = resolve(cwd(), filePath);
@@ -11,7 +11,7 @@ export const rm = async (filePath) => {
     if (error) {
       displayErrorMessage(`Error deleting file - ${error.message}`);
     } else {
-      log.green(`File ${filePath} deleted successfully`);
+      Message.green(`File ${filePath} deleted successfully`);
     }
   });
 };

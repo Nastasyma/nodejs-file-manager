@@ -2,7 +2,7 @@ import fs from "fs";
 import { resolve } from "node:path";
 import os from "os";
 import { cwd } from "process";
-import { log } from "../../utils/coloredMsg.js";
+import { Message } from "../../utils/coloredMsg.js";
 import { displayErrorMessage } from "../../utils/messages.js";
 
 export const cat = async (path) => {
@@ -18,6 +18,6 @@ export const cat = async (path) => {
   });
 
   rs.on("end", () => {
-    log.green("File read complete");
+    Message.green("File read complete");
   });
 };

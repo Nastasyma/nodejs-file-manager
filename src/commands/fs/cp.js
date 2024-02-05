@@ -2,7 +2,7 @@ import fs from "fs";
 import { cwd } from "process";
 import { resolve } from "node:path";
 import { displayErrorMessage } from "../../utils/messages.js";
-import { log } from "../../utils/coloredMsg.js";
+import { Message } from "../../utils/coloredMsg.js";
 
 export const cp = async (srcPath, destPath) => {
   const sourceFilePath = resolve(cwd(), srcPath);
@@ -28,7 +28,7 @@ export const cp = async (srcPath, destPath) => {
     readStream.pipe(writeStream);
 
     readStream.on("end", () => {
-      log.green(`File ${srcPath} copied to ${destPath} successfully`);
+      Message.green(`File ${srcPath} copied to ${destPath} successfully`);
     });
   });
 };
