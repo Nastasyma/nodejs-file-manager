@@ -1,5 +1,5 @@
 import os from "os";
-import { log } from "../utils/coloredMsg.js";
+import { log } from "../../utils/coloredMsg.js";
 
 export const printOsInfo = async (arg) => {
   switch (arg) {

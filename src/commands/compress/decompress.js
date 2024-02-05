@@ -1,9 +1,9 @@
-import fs from 'fs';
-import { resolve } from 'node:path';
-import { cwd } from 'process';
-import { createBrotliDecompress } from 'zlib';
-import { displayErrorMessage } from '../utils/messages.js';
-import { log } from '../utils/coloredMsg.js';
+import fs from "fs";
+import { resolve } from "node:path";
+import { cwd } from "process";
+import { createBrotliDecompress } from "zlib";
+import { displayErrorMessage } from "../../utils/messages.js";
+import { log } from "../../utils/coloredMsg.js";
 
 export const decompress = async (srcPath, destPath) => {
   const sourceFilePath = resolve(cwd(), srcPath);
@@ -14,15 +14,15 @@ export const decompress = async (srcPath, destPath) => {
 
   const brotliDecompress = createBrotliDecompress();
 
-  readStream.on('error', (error) => {
+  readStream.on("error", (error) => {
     displayErrorMessage(error.message);
   });
 
-  writeStream.on('error', (error) => {
+  writeStream.on("error", (error) => {
     displayErrorMessage(error.message);
   });
 
-  writeStream.on('finish', () => {
+  writeStream.on("finish", () => {
     log.green(`File decompressed and saved to ${destPath} successfully`);
   });
 

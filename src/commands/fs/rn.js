@@ -1,8 +1,8 @@
-import fs from 'fs';
-import { cwd } from 'process';
-import { resolve } from 'node:path';
-import { displayErrorMessage } from '../utils/messages.js';
-import { log } from '../utils/coloredMsg.js';
+import fs from "fs";
+import { cwd } from "process";
+import { resolve } from "node:path";
+import { displayErrorMessage } from "../../utils/messages.js";
+import { log } from "../../utils/coloredMsg.js";
 
 export const rn = async (oldName, newName) => {
   const filePath = resolve(cwd(), oldName);

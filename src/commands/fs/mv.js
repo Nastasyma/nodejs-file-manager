@@ -1,8 +1,8 @@
-import fs from 'fs';
-import { cwd } from 'process';
-import { resolve } from 'node:path';
-import { displayErrorMessage } from '../utils/messages.js';
-import { log } from '../utils/coloredMsg.js';
+import fs from "fs";
+import { cwd } from "process";
+import { resolve } from "node:path";
+import { displayErrorMessage } from "../../utils/messages.js";
+import { log } from "../../utils/coloredMsg.js";
 
 export const mv = async (srcPath, destPath) => {
   const sourceFilePath = resolve(cwd(), srcPath);
@@ -17,15 +17,15 @@ export const mv = async (srcPath, destPath) => {
     const readStream = fs.createReadStream(sourceFilePath);
     const writeStream = fs.createWriteStream(destinationFilePath);
 
-    readStream.on('error', (error) => {
+    readStream.on("error", (error) => {
       displayErrorMessage(error.message);
     });
 
-    writeStream.on('error', (error) => {
+    writeStream.on("error", (error) => {
       displayErrorMessage(error.message);
     });
 
-    writeStream.on('finish', () => {
+    writeStream.on("finish", () => {
       fs.unlink(sourceFilePath, (error) => {
         if (error) {
           displayErrorMessage(`Error deleting file - ${error.message}`);
