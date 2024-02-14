@@ -1,0 +1,15 @@
+{
+  "name": "nodejs-file-manager",
+  "version": "1.0.0",
+  "description": "RSS task: File Manager using Node.js APIs",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "Anastasia Shishmareva",
+  "license": "ISC"
+}
